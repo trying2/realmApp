@@ -69,7 +69,6 @@
 		894AD4F726F52B9700167818 = {
 			isa = PBXGroup;
 			children = (
-				894AD51526F52D0A00167818 /* Packages */,
 				894AD50226F52B9700167818 /* SuiApp2 */,
 				894AD50126F52B9700167818 /* Products */,
 				894AD51726F52D1200167818 /* Frameworks */,
@@ -87,6 +86,7 @@
 		894AD50226F52B9700167818 /* SuiApp2 */ = {
 			isa = PBXGroup;
 			children = (
+				894AD51526F52D0A00167818 /* Packages */,
 				894AD51D26F53DF200167818 /* Info.plist */,
 				894AD50326F52B9700167818 /* SuiApp2App.swift */,
 				894AD51126F52C0A00167818 /* MainScreen.swift */,
@@ -116,6 +116,7 @@
 				894AD51626F52D0A00167818 /* AppUI */,
 			);
 			name = Packages;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		894AD51726F52D1200167818 /* Frameworks */ = {
