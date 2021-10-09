@@ -15,7 +15,7 @@ extension Article: Identifiable {
 }
 
 final class NewsScreenViewModel: ObservableObject {
-    
+
     // data source
     @Published var articleList: [Article] = .init()
     
