@@ -28,7 +28,7 @@ public struct Movie: Codable, Hashable, Identifiable {
     public var popularity: Double
     public var mediaType: String
 
-    public init(genreIds: [Double], originalLanguage: String, originalTitle: String, posterPath: String, video: Bool, id: Int, voteCount: Double, overview: String, releaseDate: String, voteAverage: Double, title: String, adult: Bool, backdropPath: String, popularity: Double, mediaType: String) {
+    public init(genreIds: [Double] = [], originalLanguage: String, originalTitle: String, posterPath: String, video: Bool = false, id: Int, voteCount: Double, overview: String, releaseDate: String, voteAverage: Double, title: String, adult: Bool = false, backdropPath: String, popularity: Double, mediaType: String) {
         self.genreIds = genreIds
         self.originalLanguage = originalLanguage
         self.originalTitle = originalTitle

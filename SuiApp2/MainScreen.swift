@@ -12,7 +12,7 @@ import Networking
 struct MainScreen: View {
     @StateObject var movieViewModel: MovieViewModel = .init()
     @State var apiChoice = 2
-    var apiList = ["iOS news", "Movie week", "Animation"]
+    var apiList = ["Movie week", "CacheScreen"]
     
     var body: some View {
         NavControllerView(transition: .custom(.moveAndFade)) {
@@ -29,14 +29,12 @@ struct MainScreen: View {
                 
                 switch apiChoice {
                 case 0:
-                    NewsScreen()
-                case 1:
                     MovieTrandingScreen()
-                case 2:
-                    AnimationScreen()
+                case 1:
+                    CacheScreen()
                     
                 default:
-                    NewsScreen()
+                    MovieTrandingScreen()
                 }
             }
         }

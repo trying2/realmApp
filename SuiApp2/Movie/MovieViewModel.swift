@@ -7,6 +7,8 @@
 
 import Foundation
 import Networking
+import RealmSwift
+import Realm
 
 final class MovieViewModel: ObservableObject {
     @Published var movieList: [Movie] = .init()
@@ -17,9 +19,13 @@ final class MovieViewModel: ObservableObject {
     @Published var totalResults: Int = 999
     @Published var pageLoadCount: Int = 0
     
+    private let storageService: StorageService = .init()
+    
     let apiKey = "0dc34a2f3a360bd0e26e68231be276ef"
     
     init() {
+        storageService.clearMovies()
+        movieList = storageService.getMovies()
         fetchTrendingMoviesPage()
     }
     
@@ -43,6 +49,10 @@ final class MovieViewModel: ObservableObject {
             self.pageLoadCount += 1
             
             self.totalResults = movieData.totalResults
+            
+            movieData.results.forEach { movie in
+                self.storageService.addMovie(movie)
+            }
             
             self.movieList.append(contentsOf: movieData.results)
         }
